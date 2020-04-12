@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - /Users/matthijsbrouns/PycharmProjects/avocado/background_job_example:/app/
+    environment:
+      - "REDIS_HOST=redis"
+      - "REDIS_PORT=6379"
+  redis:
+    image: redis
